@@ -266,7 +266,6 @@ We welcome contributions! Here's how you can help:
 - 💡 **Feature Requests** - Suggest new features or improvements
 - 📝 **Documentation** - Improve README, add examples
 - 🔧 **Code Improvements** - Submit pull requests
-- 🌟 **Star the Repo** - Show your support!
 
 ### **Development Setup**
 
