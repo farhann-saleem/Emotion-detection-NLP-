@@ -21,6 +21,9 @@ class EmotionDetectionModel:
         # Convert to lowercase
         text = text.lower()
         
+        # Handle negation (join "not" with next word)
+        text = self.handle_negation(text)
+        
         # Remove punctuation
         text = text.translate(str.maketrans('', '', string.punctuation))
         
@@ -40,6 +43,13 @@ class EmotionDetectionModel:
             # If NLTK data is not available, skip stopword removal
             pass
             
+        return text
+    
+    def handle_negation(self, text):
+        """Handle negation by joining 'not' with the next word"""
+        import re
+        # Simple negation handler: joins "not" with the next word
+        text = re.sub(r"\bnot\s+(\w+)", r"not_\1", text)
         return text
     
     def train_model(self, data_path='train.txt'):
